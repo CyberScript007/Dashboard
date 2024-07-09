@@ -1,14 +1,16 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <>
-      <GlobalStyles />
-      <AppLayout />
-    </>
+    <AppLayout />
+    // <ThemeProvider theme={theme}>
+    //   <BrowserRouter>
+    //     <Routes>
+    //       <Route element={AppLayout}></Route>
+    //     </Routes>
+    //   </BrowserRouter>
+    // </ThemeProvider>
   );
 }
 

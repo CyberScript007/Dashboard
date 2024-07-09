@@ -1,13 +1,11 @@
-import styled from "styled-components";
-
-const SidebarStyle = styled.aside`
-  height: 100vh;
-  overflow: auto;
-  background-color: orangered;
-`;
+import Logo from "./Logo";
 
 function Sidebar() {
-  return <SidebarStyle className="bg-white">Hello Sidebar style</SidebarStyle>;
+  return (
+    <div className="h-screen w-full max-[1200px]:hidden">
+      <Logo />
+    </div>
+  );
 }
 
 export default Sidebar;
