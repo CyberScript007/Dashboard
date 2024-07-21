@@ -3,7 +3,7 @@ import MainContent from "./MainContent";
 
 function AppLayout() {
   return (
-    <div className="grid grid-cols-[260px_1fr]">
+    <div className="flex">
       <Sidebar />
       <MainContent />
     </div>

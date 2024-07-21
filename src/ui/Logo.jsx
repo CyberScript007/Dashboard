@@ -3,7 +3,7 @@ import LogoIcon from "./LogoIcon";
 
 function Logo() {
   return (
-    <header className="relative bg-white px-8 py-6">
+    <header className="relative bg-white py-6 pl-7">
       <LogoContent />
       <LogoIcon />
     </header>
