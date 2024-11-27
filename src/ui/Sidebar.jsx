@@ -9,7 +9,7 @@ function Sidebar() {
 
   const sidebarAnimate = {
     open: {
-      width: "16rem",
+      width: "16.5rem",
     },
     closed: {
       width: "5rem",
@@ -17,8 +17,8 @@ function Sidebar() {
   };
 
   return (
-    <motion.div
-      className={`${onHover ? "fixed inset-x-0 inset-y-0 z-[1000]" : "relative"} max-h-screen w-[16rem] bg-white max-[1200px]:hidden`}
+    <motion.aside
+      className={`${onHover ? "fixed inset-x-0 inset-y-0 z-[1000]" : "relative"} max-h-screen w-[16.5rem] bg-white max-[1200px]:hidden`}
       onMouseEnter={openSidebar}
       onMouseLeave={closeSidebar}
       variants={sidebarAnimate}
@@ -26,7 +26,7 @@ function Sidebar() {
     >
       <Logo />
       <SidebarContent />
-    </motion.div>
+    </motion.aside>
   );
 }
 

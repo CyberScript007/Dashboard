@@ -9,7 +9,6 @@ function ToggleSidebarContext({ children }) {
   const openSidebar = () => {
     if (toggle) {
       setOnHover(true);
-      // console.log(onHover);
     }
   };
   const closeSidebar = () => {
@@ -20,7 +19,13 @@ function ToggleSidebarContext({ children }) {
 
   return (
     <ToggleContext.Provider
-      value={{ toggle, toggleSidebar, openSidebar, closeSidebar, onHover }}
+      value={{
+        toggle,
+        toggleSidebar,
+        openSidebar,
+        closeSidebar,
+        onHover,
+      }}
     >
       {children}
     </ToggleContext.Provider>
