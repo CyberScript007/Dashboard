@@ -181,7 +181,7 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             {/* Dashboard  routes*/}
-            {/* <Route index element={<Navigate to="dashboard-analytics" />} /> */}
+            <Route index element={<Navigate to="dashboard-analytics" />} />
             <Route
               path="dashboard-analytics"
               element={<DashboardAnalytics />}
