@@ -132,17 +132,17 @@ const containerVariant = {
 };
 
 // flat all nested array
-const lists = flattendChildren(eCommerceList);
+// const lists = flattendChildren(eCommerceList);
+const lists = eCommerceList.flat(Infinity);
 
 function Ecommerce() {
-  const [show, setShow] = useState(false);
+  const { showList, toggle, onHover } = useToggleContext();
   const { pathname } = useLocation();
+  const isOpen = showList === "eCommerce";
 
   return (
     <>
       <ListDropDown
-        show={show}
-        setShow={setShow}
         pathname={pathname}
         icon={<BiCartAlt size={23} />}
         lists={lists}
@@ -151,12 +151,17 @@ function Ecommerce() {
 
       <motion.ul
         variants={containerVariant}
-        animate={show ? "showList" : "hideList"}
+        animate={isOpen ? "showList" : "hideList"}
         className="h-0 overflow-hidden"
       >
-        {eCommerceList.map((item) => (
-          <NestedDropDownMenu key={item.name} item={item} />
-        ))}
+        {(!toggle || onHover) &&
+          eCommerceList.map((item) => (
+            <NestedDropDownMenu
+              key={item.name}
+              item={item}
+              listname={"eCommerce"}
+            />
+          ))}
       </motion.ul>
     </>
   );

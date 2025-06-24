@@ -33,7 +33,7 @@ function Cards() {
     <>
       <DropDowMenu
         icon={<PiCardsThree size={23} />}
-        itemContent={"Cards"}
+        itemContent={"cards"}
         lists={cardsList}
       />
     </>

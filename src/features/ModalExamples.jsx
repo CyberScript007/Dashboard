@@ -8,7 +8,7 @@ function ModalExamples() {
       <ListLinkMenu
         icon={<RiInboxUnarchiveLine size={25} />}
         pathUrl={pathUrl}
-        linkName={"Modal Examples"}
+        linkName={"modal examples"}
       />
     </>
   );

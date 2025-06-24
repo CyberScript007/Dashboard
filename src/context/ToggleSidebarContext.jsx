@@ -1,10 +1,20 @@
 import { createContext, useContext, useState } from "react";
+import useLocalStorage from "./../hooks/useLocalStorage";
+import useChangeMode from "../hooks/useChangeMode";
 
 const ToggleContext = createContext();
 
 function ToggleSidebarContext({ children }) {
   const [toggle, setToggle] = useState(false);
   const [onHover, setOnHover] = useState(false);
+  const [showList, setShowList] = useLocalStorage("showList", null);
+  const [theme, setTheme, themeIcon, setThemeIcon] = useChangeMode();
+
+  const toggleList = (componentName) => {
+    return setShowList(() =>
+      showList === componentName ? null : componentName,
+    );
+  };
 
   const openSidebar = () => {
     if (toggle) {
@@ -25,6 +35,12 @@ function ToggleSidebarContext({ children }) {
         openSidebar,
         closeSidebar,
         onHover,
+        showList,
+        toggleList,
+        theme,
+        setTheme,
+        themeIcon,
+        setThemeIcon,
       }}
     >
       {children}

@@ -37,7 +37,7 @@ function UserInterface() {
     <>
       <DropDowMenu
         icon={<BsArchive size={23} />}
-        itemContent={"User interface"}
+        itemContent={"user interface"}
         lists={userInterfaceLists}
       />
     </>

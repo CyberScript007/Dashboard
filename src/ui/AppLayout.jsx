@@ -3,7 +3,7 @@ import MainContent from "./MainContent";
 
 function AppLayout() {
   return (
-    <div className="flex">
+    <div className="flex max-h-screen overflow-hidden">
       <Sidebar />
       <MainContent />
     </div>

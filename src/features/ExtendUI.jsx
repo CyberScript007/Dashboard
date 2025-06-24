@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import NestedDropDownMenu from "../Components/NestedDropDownMenu";
 import ListDropDown from "../Components/ListDropDown";
 import flattendChildren from "../utils/flattendChildren";
+import { useToggleContext } from "../context/ToggleSidebarContext";
 
 const extendUIList = [
   {
@@ -55,26 +56,25 @@ const variantObj = {
 };
 
 function ExtendUI() {
-  const [show, setShow] = useState(false);
+  const { showList, toggle, onHover } = useToggleContext();
   const { pathname } = useLocation();
   return (
     <>
       <ListDropDown
-        setShow={setShow}
-        show={show}
-        listName={"Extended UI"}
+        listName={"extended ui"}
         lists={lists}
         icon={<BsCopy size={23} />}
         pathname={pathname}
       />
       <motion.ul
         variants={variantObj}
-        animate={show ? "show" : "hide"}
+        animate={showList === "Extended UI" ? "show" : "hide"}
         className="h-0 overflow-hidden"
       >
-        {extendUIList.map((el) => (
-          <NestedDropDownMenu key={el.name} item={el} />
-        ))}
+        {(!toggle || onHover) &&
+          extendUIList.map((el) => (
+            <NestedDropDownMenu key={el.name} item={el} />
+          ))}
       </motion.ul>
     </>
   );

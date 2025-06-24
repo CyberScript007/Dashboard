@@ -30,7 +30,7 @@ function FrontPages() {
     <>
       <DropDowMenu
         icon={<BiStore size={23} />}
-        itemContent={"Front Pages"}
+        itemContent={"front pages"}
         lists={frontList}
         target="blank"
       />

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import ListDropDown from "../Components/ListDropDown";
 import NestedDropDownMenu from "../Components/NestedDropDownMenu";
+import { useToggleContext } from "../context/ToggleSidebarContext";
 
 const authenticationList = [
   {
@@ -61,25 +62,24 @@ const variantObj = {
 };
 
 function Authentication() {
-  const [show, setShow] = useState(false);
+  const { showList, toggle, onHover } = useToggleContext();
 
   return (
     <>
       <ListDropDown
-        show={show}
-        setShow={setShow}
-        listName={"Authentications"}
+        listName={"authentications"}
         icon={<BiLockOpenAlt size={23} />}
       />
 
       <motion.ul
         variants={variantObj}
-        animate={show ? "showList" : "hideList"}
+        animate={showList === "authentications" ? "showList" : "hideList"}
         className="h-0 overflow-hidden"
       >
-        {authenticationList.map((el) => (
-          <NestedDropDownMenu key={el.name} item={el} target="blank" />
-        ))}
+        {(!toggle || onHover) &&
+          authenticationList.map((el) => (
+            <NestedDropDownMenu key={el.name} item={el} target="blank" />
+          ))}
       </motion.ul>
     </>
   );

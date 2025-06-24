@@ -9,7 +9,7 @@ function Chat() {
     <ListLinkMenu
       icon={<HiOutlineChatBubbleLeftRight size={23} />}
       pathUrl={pathUrl}
-      linkName={"Chat"}
+      linkName={"chat"}
     />
   );
 }

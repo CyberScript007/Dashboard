@@ -11,18 +11,20 @@ const anime = {
 };
 
 function CategoryDivider({ title }) {
-  const { toggle, onHover } = useToggleContext();
+  const { toggle, onHover, theme } = useToggleContext();
   return (
     <li className="flex items-center gap-4 py-4">
       <motion.span
         variants={anime}
         animate={!toggle || onHover ? "show" : "hide"}
-        className="inline-block h-[1px] w-6 bg-gray-300"
+        className={`inline-block h-[1px] w-6 ${theme === "light" ? "bg-gray-300" : "dark:bg-slate-500"}`}
       ></motion.span>
 
-      {(!toggle || onHover) && (
-        <span className="text-sm uppercase text-gray-400">{title}</span>
-      )}
+      <span
+        className={`text-sm uppercase ${theme === "light" ? "text-gray-400" : "dark:text-slate-500"} ${!toggle || onHover ? "block" : "hidden"}`}
+      >
+        {title}
+      </span>
     </li>
   );
 }

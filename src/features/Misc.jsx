@@ -7,7 +7,7 @@ function Misc() {
     <ListLinkMenu
       icon={<LuFileText size={23} />}
       pathUrl={pathUrl}
-      linkName={"Documentation"}
+      linkName={"documentation"}
       target="blank"
     />
   );

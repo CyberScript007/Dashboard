@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import ListDropDown from "../Components/ListDropDown";
 import flattendChildren from "../utils/flattendChildren";
 import NestedDropDownMenu from "../Components/NestedDropDownMenu";
+import { useToggleContext } from "../context/ToggleSidebarContext";
 
 const pagesList = [
   {
@@ -99,27 +100,24 @@ const variantObj = {
 };
 
 function Pages() {
-  const [show, setShow] = useState(false);
+  const { showList, toggle, onHover } = useToggleContext();
   const { pathname } = useLocation();
 
   return (
     <>
       <ListDropDown
-        show={show}
-        setShow={setShow}
         pathname={pathname}
-        listName={"Pages"}
+        listName={"pages"}
         lists={lists}
         icon={<FiCreditCard size={23} />}
       />
       <motion.ul
         variants={variantObj}
-        animate={show ? "showList" : "hideList"}
+        animate={showList === "pages" ? "showList" : "hideList"}
         className="h-0 overflow-hidden"
       >
-        {pagesList.map((el) => (
-          <NestedDropDownMenu key={el.name} item={el} />
-        ))}
+        {(!toggle || onHover) &&
+          pagesList.map((el) => <NestedDropDownMenu key={el.name} item={el} />)}
       </motion.ul>
     </>
   );

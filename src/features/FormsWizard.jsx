@@ -17,7 +17,7 @@ function FormsWizard() {
     <>
       <DropDowMenu
         icon={<BiCarousel size={23} />}
-        itemContent={"Form Wizard"}
+        itemContent={"form wizard"}
         lists={formsWizardList}
       />
     </>

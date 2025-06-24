@@ -173,390 +173,399 @@ import ChartJS from "./pages/Charts/ChartJS";
 
 // Misc page
 import Documentation from "./pages/Documentation";
+import { ShortcutContext } from "./context/ShortcutContext";
 
 function App() {
   return (
     <ToggleSidebarContext>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            {/* Dashboard  routes*/}
-            <Route index element={<Navigate to="dashboard-analytics" />} />
+      <ShortcutContext>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppLayout />}>
+              {/* Dashboard  routes*/}
+              <Route index element={<Navigate to="dashboard-analytics" />} />
+              <Route
+                path="dashboard-analytics"
+                element={<DashboardAnalytics />}
+              />
+              <Route path="dashboard-crm" element={<DashboardCrm />} />
+              <Route
+                path="dashboard-eCommerce"
+                element={<DashboardEcommerce />}
+              />
+              <Route
+                path="dashboard-logistics"
+                element={<DashboardLogistics />}
+              />
+              <Route path="dashboard-academy" element={<DashboardAcademy />} />
+              {/* Layout routes */}
+              <Route path="layout-collapsed-menu" element={<CollapsedMenu />} />
+              <Route path="layout-content-navbar" element={<ContentNavbar />} />
+              <Route
+                path="layout-content-nav-sidebar"
+                element={<ContentNavSidebar />}
+              />
+              <Route path="layout-horizontal" element={<Horizontal />} />
+              <Route path="layout-without-menu" element={<WithoutMenu />} />
+              <Route path="layout-without-navbar" element={<WithoutNavbar />} />
+              <Route path="layout-fluid" element={<Fluid />} />
+              <Route path="layout-container" element={<Container />} />
+              <Route path="layout-blank" element={<Blank />} />
+              {/* Email route */}
+              <Route path="email" element={<EmailPage />} />
+              {/* Chat router */}
+              <Route path="chat" element={<ChatPage />} />
+              {/* Calender route */}
+              <Route path="calender" element={<CalenderPage />} />
+              {/* Kanban route */}
+              <Route path="kanban" element={<KanbanPage />} />
+              {/* Ecommerce route */}
+              <Route
+                path="eCommerce-dashboard"
+                element={<EcommerceDashboardPage />}
+              />
+              <Route
+                path="eCommerce-product-list"
+                element={<EcommerceProductListPage />}
+              />
+              <Route
+                path="eCommerce-add-product"
+                element={<EcommerceAddProductPage />}
+              />
+              <Route
+                path="eCommerce-category-list"
+                element={<EcommerceCategoryListPage />}
+              />
+              <Route
+                path="eCommerce-order-list"
+                element={<EcommerceOrderListPage />}
+              />
+              <Route
+                path="eCommerce-order-details"
+                element={<EcommerceOrderDetailsPage />}
+              />
+              <Route
+                path="eCommerce-customer-all"
+                element={<EcommerceCustomerAllPage />}
+              />
+              <Route
+                path="eCommerce-customer-details-overview"
+                element={<EcommerceCustomerOverviewPage />}
+              />
+              <Route
+                path="eCommerce-customer-details-security"
+                element={<EcommerceCustomerSecurity />}
+              />
+              <Route
+                path="eCommerce-customer-details-billing"
+                element={<EcommerceCustomerBillingPage />}
+              />
+              <Route
+                path="eCommerce-customer-details-notifications"
+                element={<EcommerceCustomerNotificationPage />}
+              />
+              <Route
+                path="eCommerce-manage-reviews"
+                element={<EcommerceManageReviewsPage />}
+              />
+              <Route
+                path="eCommerce-referrals"
+                element={<EcommerceReferralsPage />}
+              />
+              {/* Settings routes */}
+              <Route
+                path="eCommerce-settings-details"
+                element={<EcommerceSettingsDetailsPage />}
+              />
+              <Route
+                path="eCommerce-settings-payments"
+                element={<EcommerceSettingsPaymentsPage />}
+              />
+              <Route
+                path="eCommerce-settings-checkout"
+                element={<EcommerceSettingsCheckoutPage />}
+              />
+              <Route
+                path="eCommerce-settings-shipping"
+                element={<EcommerceSettingsShippingPage />}
+              />
+              <Route
+                path="eCommerce-settings-locations"
+                element={<EcommerceSettingsLocationsPage />}
+              />
+              <Route
+                path="eCommerce-settings-notifications"
+                element={<EcommerceSettingsNotificationPage />}
+              />
+              {/* Academy routes  */}
+              <Route
+                path="academy-dashboard"
+                element={<AcademyDashboardPage />}
+              />
+              <Route path="academy-course" element={<AcademyCoursePage />} />
+              <Route
+                path="academy-course-details"
+                element={<AcademyCourseDetailsPage />}
+              />
+              {/* Logistics routes  */}
+              <Route
+                path="logistics-dashboard"
+                element={<LogisticsDashboardPage />}
+              />
+              <Route path="logistics-fleet" element={<LogisticsFleetPage />} />
+              {/* Invoice routes  */}
+              <Route path="invoice-list" element={<InvoiceListPage />} />
+              <Route path="invoice-preview" element={<InvoicePreviewPage />} />
+              <Route path="invoice-edit" element={<InvoiceEditPage />} />
+              <Route path="invoice-add" element={<InvoiceAddPage />} />
+              {/* Users routes  */}
+              <Route path="users-list" element={<UsersListPage />} />
+              <Route
+                path="users-view-account"
+                element={<UsersViewAccountPage />}
+              />
+              <Route
+                path="users-view-security"
+                element={<UsersViewSecurityPage />}
+              />
+              <Route
+                path="users-view-billing-plans"
+                element={<UsersViewBillingAndPlansPage />}
+              />
+              <Route
+                path="users-view-notifications"
+                element={<UsersViewNotificationPage />}
+              />
+              <Route
+                path="users-view-connections"
+                element={<UsersViewConnectionPage />}
+              />
+              {/* Roles and Permission routes */}
+              <Route
+                path="rolesList-roles"
+                element={<RolesAndPermissionRolesPage />}
+              />
+              <Route
+                path="rolesList-permission"
+                element={<RolesAndPermission_PermissionPage />}
+              />
+              {/* Pages routes */}
+              <Route path="pages-user-profile" element={<PagesUserProfile />} />
+              <Route
+                path="pages-user-profile-teams"
+                element={<PagesUserTeams />}
+              />
+              <Route
+                path="pages-user-profile-projects"
+                element={<PagesUserProjects />}
+              />
+              <Route
+                path="pages-user-profile-connections"
+                element={<PagesUserConnections />}
+              />
+              <Route
+                path="pages-account-settings-account"
+                element={<PagesAccountSettingsAccount />}
+              />
+              <Route
+                path="pages-account-settings-security"
+                element={<PagesAccountSettingsSecurity />}
+              />
+              <Route
+                path="pages-account-settings-billing-plans"
+                element={<PagesAccountSettingsBillingAndPlans />}
+              />
+              <Route
+                path="pages-account-settings-notifications"
+                element={<PagesAccountSettingsNotification />}
+              />
+              <Route
+                path="pages-account-settings-connections"
+                element={<PagesAccountSettingsConnections />}
+              />
+              <Route path="pages-faq" element={<PagesFaq />} />
+              <Route path="pages-pricing" element={<PagesPricing />} />
+              <Route path="pages-misc-error" element={<PagesMiscError />} />
+              <Route
+                path="pages-misc-under-maintenance"
+                element={<PagesMiscUnderMaintenance />}
+              />
+              <Route
+                path="pages-misc-coming-soon"
+                element={<PagesMiscComingSoon />}
+              />
+              <Route
+                path="pages-misc-not-authorized"
+                element={<PagesMiscNotAuthorized />}
+              />
+              {/* Wizard Examples routes */}
+              <Route
+                path="wizard-examples-checkout"
+                element={<WizardExamplesCheckoutPage />}
+              />
+              <Route
+                path="wizard-examples-property-listing"
+                element={<WizardExamplesPropertyListingPage />}
+              />
+              <Route
+                path="wizard-examples-create-deal"
+                element={<WizardExamplesCreateDeal />}
+              />
+
+              {/* Modal Examples routes */}
+              <Route path="modal-examples" element={<ModalExamplesPage />} />
+
+              {/* Cards routes */}
+              <Route path="cards-basic" element={<CardsBasicPage />} />
+              <Route path="cards-advance" element={<CardsAdvancePage />} />
+              <Route
+                path="cards-statistics"
+                element={<CardsStatisticsPage />}
+              />
+              <Route path="cards-analytics" element={<CardsAnalyticsPage />} />
+              <Route
+                path="cards-gamifications"
+                element={<CardsGamificationsPage />}
+              />
+              <Route path="cards-actions" element={<CardsActionsPage />} />
+
+              {/* User interface routes */}
+              <Route
+                path="user-interface-accordion"
+                element={<UserInterfaceAccordionPage />}
+              />
+              <Route
+                path="user-interface-carousel"
+                element={<UserInterfaceCarouselPage />}
+              />
+              <Route
+                path="user-interface-collapse"
+                element={<UserInterfaceCollapsePage />}
+              />
+              <Route
+                path="user-interface-modals"
+                element={<UserInterfaceModalsPage />}
+              />
+              <Route
+                path="user-interface-offcanvas"
+                element={<UserInterfaceOffcanvasPage />}
+              />
+              <Route
+                path="user-interface-tab-pills"
+                element={<UserInterfaceTabAndPillsPage />}
+              />
+              <Route
+                path="user-interface-tooltips-popovers"
+                element={<UserInterfaceTooltipsAndPopoversPage />}
+              />
+
+              {/* Extended UI routes */}
+              <Route path="extend-ui-drag-drop" element={<DragAndDropPage />} />
+              <Route
+                path="extend-ui-star-ratings"
+                element={<StarRatingsPage />}
+              />
+              <Route
+                path="extend-ui-timeline-basic"
+                element={<TimelineBasicPage />}
+              />
+              <Route
+                path="extend-ui-timeline-fullscreen"
+                element={<TimelineFullscreenPage />}
+              />
+              <Route path="extend-ui-tour" element={<TourPage />} />
+              <Route path="extend-ui-treeview" element={<TreeviewPage />} />
+
+              {/* Forms and Tables routes */}
+              <Route
+                path="forms-wizard-numbered"
+                element={<FormsWizardNumberedPage />}
+              />
+              <Route
+                path="forms-wizard-icons"
+                element={<FormsWizardIconPage />}
+              />
+
+              {/* Datatables routes */}
+              <Route
+                path="data-tables-basic"
+                element={<DataTablesBasicPage />}
+              />
+              <Route
+                path="data-tables-advanced"
+                element={<DataTablesAdvancedPage />}
+              />
+
+              {/* Charts routes */}
+              <Route path="charts-apex" element={<ApexCharts />} />
+              <Route path="charts-chartjs" element={<ChartJS />} />
+            </Route>
+
+            {/* Front routes */}
+            <Route path="landing" element={<Landing />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="payment" element={<Payment />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="help" element={<HelpCenter />} />
+            {/* Authentication routes*/}
             <Route
-              path="dashboard-analytics"
-              element={<DashboardAnalytics />}
+              path="authentication-login-basic"
+              element={<AuthenticationLoginBasic />}
             />
-            <Route path="dashboard-crm" element={<DashboardCrm />} />
             <Route
-              path="dashboard-eCommerce"
-              element={<DashboardEcommerce />}
+              path="authentication-login-cover"
+              element={<AuthenticationLoginCover />}
             />
             <Route
-              path="dashboard-logistics"
-              element={<DashboardLogistics />}
-            />
-            <Route path="dashboard-academy" element={<DashboardAcademy />} />
-            {/* Layout routes */}
-            <Route path="layout-collapsed-menu" element={<CollapsedMenu />} />
-            <Route path="layout-content-navbar" element={<ContentNavbar />} />
-            <Route
-              path="layout-content-nav-sidebar"
-              element={<ContentNavSidebar />}
-            />
-            <Route path="layout-horizontal" element={<Horizontal />} />
-            <Route path="layout-without-menu" element={<WithoutMenu />} />
-            <Route path="layout-without-navbar" element={<WithoutNavbar />} />
-            <Route path="layout-fluid" element={<Fluid />} />
-            <Route path="layout-container" element={<Container />} />
-            <Route path="layout-blank" element={<Blank />} />
-            {/* Email route */}
-            <Route path="email" element={<EmailPage />} />
-            {/* Chat router */}
-            <Route path="chat" element={<ChatPage />} />
-            {/* Calender route */}
-            <Route path="calender" element={<CalenderPage />} />
-            {/* Kanban route */}
-            <Route path="kanban" element={<KanbanPage />} />
-            {/* Ecommerce route */}
-            <Route
-              path="eCommerce-dashboard"
-              element={<EcommerceDashboardPage />}
+              path="authentication-register-basic"
+              element={<AuthenticationRegisterBasic />}
             />
             <Route
-              path="eCommerce-product-list"
-              element={<EcommerceProductListPage />}
+              path="authentication-register-cover"
+              element={<AuthenticationRegisterCover />}
             />
             <Route
-              path="eCommerce-add-product"
-              element={<EcommerceAddProductPage />}
+              path="authentication-register-multi-steps"
+              element={<AuthenticationRegisterMultiSteps />}
             />
             <Route
-              path="eCommerce-category-list"
-              element={<EcommerceCategoryListPage />}
+              path="authentication-verify-email-basic"
+              element={<AuthenticationVerifyEmailBasic />}
             />
             <Route
-              path="eCommerce-order-list"
-              element={<EcommerceOrderListPage />}
+              path="authentication-verify-email-cover"
+              element={<AuthenticationVerifyEmailCover />}
             />
             <Route
-              path="eCommerce-order-details"
-              element={<EcommerceOrderDetailsPage />}
+              path="authentication-reset-password-basic"
+              element={<AuthenticationResetPasswordBasic />}
             />
             <Route
-              path="eCommerce-customer-all"
-              element={<EcommerceCustomerAllPage />}
+              path="authentication-reset-password-cover"
+              element={<AuthenticationResetPasswordCover />}
             />
             <Route
-              path="eCommerce-customer-details-overview"
-              element={<EcommerceCustomerOverviewPage />}
+              path="authentication-forgot-password-basic"
+              element={<AuthenticationForgotPasswordBasic />}
             />
             <Route
-              path="eCommerce-customer-details-security"
-              element={<EcommerceCustomerSecurity />}
+              path="authentication-forgot-password-cover"
+              element={<AuthenticationForgotPasswordCover />}
             />
             <Route
-              path="eCommerce-customer-details-billing"
-              element={<EcommerceCustomerBillingPage />}
+              path="authentication-two-steps-basic"
+              element={<AuthenticationTwoStepsBasic />}
             />
             <Route
-              path="eCommerce-customer-details-notifications"
-              element={<EcommerceCustomerNotificationPage />}
-            />
-            <Route
-              path="eCommerce-manage-reviews"
-              element={<EcommerceManageReviewsPage />}
-            />
-            <Route
-              path="eCommerce-referrals"
-              element={<EcommerceReferralsPage />}
-            />
-            {/* Settings routes */}
-            <Route
-              path="eCommerce-settings-details"
-              element={<EcommerceSettingsDetailsPage />}
-            />
-            <Route
-              path="eCommerce-settings-payments"
-              element={<EcommerceSettingsPaymentsPage />}
-            />
-            <Route
-              path="eCommerce-settings-checkout"
-              element={<EcommerceSettingsCheckoutPage />}
-            />
-            <Route
-              path="eCommerce-settings-shipping"
-              element={<EcommerceSettingsShippingPage />}
-            />
-            <Route
-              path="eCommerce-settings-locations"
-              element={<EcommerceSettingsLocationsPage />}
-            />
-            <Route
-              path="eCommerce-settings-notifications"
-              element={<EcommerceSettingsNotificationPage />}
-            />
-            {/* Academy routes  */}
-            <Route
-              path="academy-dashboard"
-              element={<AcademyDashboardPage />}
-            />
-            <Route path="academy-course" element={<AcademyCoursePage />} />
-            <Route
-              path="academy-course-details"
-              element={<AcademyCourseDetailsPage />}
-            />
-            {/* Logistics routes  */}
-            <Route
-              path="logistics-dashboard"
-              element={<LogisticsDashboardPage />}
-            />
-            <Route path="logistics-fleet" element={<LogisticsFleetPage />} />
-            {/* Invoice routes  */}
-            <Route path="invoice-list" element={<InvoiceListPage />} />
-            <Route path="invoice-preview" element={<InvoicePreviewPage />} />
-            <Route path="invoice-edit" element={<InvoiceEditPage />} />
-            <Route path="invoice-add" element={<InvoiceAddPage />} />
-            {/* Users routes  */}
-            <Route path="users-list" element={<UsersListPage />} />
-            <Route
-              path="users-view-account"
-              element={<UsersViewAccountPage />}
-            />
-            <Route
-              path="users-view-security"
-              element={<UsersViewSecurityPage />}
-            />
-            <Route
-              path="users-view-billing-plans"
-              element={<UsersViewBillingAndPlansPage />}
-            />
-            <Route
-              path="users-view-notifications"
-              element={<UsersViewNotificationPage />}
-            />
-            <Route
-              path="users-view-connections"
-              element={<UsersViewConnectionPage />}
-            />
-            {/* Roles and Permission routes */}
-            <Route
-              path="rolesList-roles"
-              element={<RolesAndPermissionRolesPage />}
-            />
-            <Route
-              path="rolesList-permission"
-              element={<RolesAndPermission_PermissionPage />}
-            />
-            {/* Pages routes */}
-            <Route path="pages-user-profile" element={<PagesUserProfile />} />
-            <Route
-              path="pages-user-profile-teams"
-              element={<PagesUserTeams />}
-            />
-            <Route
-              path="pages-user-profile-projects"
-              element={<PagesUserProjects />}
-            />
-            <Route
-              path="pages-user-profile-connections"
-              element={<PagesUserConnections />}
-            />
-            <Route
-              path="pages-account-settings-account"
-              element={<PagesAccountSettingsAccount />}
-            />
-            <Route
-              path="pages-account-settings-security"
-              element={<PagesAccountSettingsSecurity />}
-            />
-            <Route
-              path="pages-account-settings-billing-plans"
-              element={<PagesAccountSettingsBillingAndPlans />}
-            />
-            <Route
-              path="pages-account-settings-notifications"
-              element={<PagesAccountSettingsNotification />}
-            />
-            <Route
-              path="pages-account-settings-connections"
-              element={<PagesAccountSettingsConnections />}
-            />
-            <Route path="pages-faq" element={<PagesFaq />} />
-            <Route path="pages-pricing" element={<PagesPricing />} />
-            <Route path="pages-misc-error" element={<PagesMiscError />} />
-            <Route
-              path="pages-misc-under-maintenance"
-              element={<PagesMiscUnderMaintenance />}
-            />
-            <Route
-              path="pages-misc-coming-soon"
-              element={<PagesMiscComingSoon />}
-            />
-            <Route
-              path="pages-misc-not-authorized"
-              element={<PagesMiscNotAuthorized />}
-            />
-            {/* Wizard Examples routes */}
-            <Route
-              path="wizard-examples-checkout"
-              element={<WizardExamplesCheckoutPage />}
-            />
-            <Route
-              path="wizard-examples-property-listing"
-              element={<WizardExamplesPropertyListingPage />}
-            />
-            <Route
-              path="wizard-examples-create-deal"
-              element={<WizardExamplesCreateDeal />}
+              path="authentication-two-steps-cover"
+              element={<AuthenticationTwoStepsCover />}
             />
 
-            {/* Modal Examples routes */}
-            <Route path="modal-examples" element={<ModalExamplesPage />} />
-
-            {/* Cards routes */}
-            <Route path="cards-basic" element={<CardsBasicPage />} />
-            <Route path="cards-advance" element={<CardsAdvancePage />} />
-            <Route path="cards-statistics" element={<CardsStatisticsPage />} />
-            <Route path="cards-analytics" element={<CardsAnalyticsPage />} />
-            <Route
-              path="cards-gamifications"
-              element={<CardsGamificationsPage />}
-            />
-            <Route path="cards-actions" element={<CardsActionsPage />} />
-
-            {/* User interface routes */}
-            <Route
-              path="user-interface-accordion"
-              element={<UserInterfaceAccordionPage />}
-            />
-            <Route
-              path="user-interface-carousel"
-              element={<UserInterfaceCarouselPage />}
-            />
-            <Route
-              path="user-interface-collapse"
-              element={<UserInterfaceCollapsePage />}
-            />
-            <Route
-              path="user-interface-modals"
-              element={<UserInterfaceModalsPage />}
-            />
-            <Route
-              path="user-interface-offcanvas"
-              element={<UserInterfaceOffcanvasPage />}
-            />
-            <Route
-              path="user-interface-tab-pills"
-              element={<UserInterfaceTabAndPillsPage />}
-            />
-            <Route
-              path="user-interface-tooltips-popovers"
-              element={<UserInterfaceTooltipsAndPopoversPage />}
-            />
-
-            {/* Extended UI routes */}
-            <Route path="extend-ui-drag-drop" element={<DragAndDropPage />} />
-            <Route
-              path="extend-ui-star-ratings"
-              element={<StarRatingsPage />}
-            />
-            <Route
-              path="extend-ui-timeline-basic"
-              element={<TimelineBasicPage />}
-            />
-            <Route
-              path="extend-ui-timeline-fullscreen"
-              element={<TimelineFullscreenPage />}
-            />
-            <Route path="extend-ui-tour" element={<TourPage />} />
-            <Route path="extend-ui-treeview" element={<TreeviewPage />} />
-
-            {/* Forms and Tables routes */}
-            <Route
-              path="forms-wizard-numbered"
-              element={<FormsWizardNumberedPage />}
-            />
-            <Route
-              path="forms-wizard-icons"
-              element={<FormsWizardIconPage />}
-            />
-
-            {/* Datatables routes */}
-            <Route path="data-tables-basic" element={<DataTablesBasicPage />} />
-            <Route
-              path="data-tables-advanced"
-              element={<DataTablesAdvancedPage />}
-            />
-
-            {/* Charts routes */}
-            <Route path="charts-apex" element={<ApexCharts />} />
-            <Route path="charts-chartjs" element={<ChartJS />} />
-          </Route>
-
-          {/* Front routes */}
-          <Route path="landing" element={<Landing />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="payment" element={<Payment />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="help" element={<HelpCenter />} />
-          {/* Authentication routes*/}
-          <Route
-            path="authentication-login-basic"
-            element={<AuthenticationLoginBasic />}
-          />
-          <Route
-            path="authentication-login-cover"
-            element={<AuthenticationLoginCover />}
-          />
-          <Route
-            path="authentication-register-basic"
-            element={<AuthenticationRegisterBasic />}
-          />
-          <Route
-            path="authentication-register-cover"
-            element={<AuthenticationRegisterCover />}
-          />
-          <Route
-            path="authentication-register-multi-steps"
-            element={<AuthenticationRegisterMultiSteps />}
-          />
-          <Route
-            path="authentication-verify-email-basic"
-            element={<AuthenticationVerifyEmailBasic />}
-          />
-          <Route
-            path="authentication-verify-email-cover"
-            element={<AuthenticationVerifyEmailCover />}
-          />
-          <Route
-            path="authentication-reset-password-basic"
-            element={<AuthenticationResetPasswordBasic />}
-          />
-          <Route
-            path="authentication-reset-password-cover"
-            element={<AuthenticationResetPasswordCover />}
-          />
-          <Route
-            path="authentication-forgot-password-basic"
-            element={<AuthenticationForgotPasswordBasic />}
-          />
-          <Route
-            path="authentication-forgot-password-cover"
-            element={<AuthenticationForgotPasswordCover />}
-          />
-          <Route
-            path="authentication-two-steps-basic"
-            element={<AuthenticationTwoStepsBasic />}
-          />
-          <Route
-            path="authentication-two-steps-cover"
-            element={<AuthenticationTwoStepsCover />}
-          />
-
-          {/* Misc route */}
-          <Route path="documentation" element={<Documentation />} />
-        </Routes>
-      </BrowserRouter>
+            {/* Misc route */}
+            <Route path="documentation" element={<Documentation />} />
+          </Routes>
+        </BrowserRouter>
+      </ShortcutContext>
     </ToggleSidebarContext>
   );
 }

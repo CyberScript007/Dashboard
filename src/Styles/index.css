@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  @apply text-slate-500;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.islight.active span {
+  @apply h-[1rem] w-[1rem] rounded-full border-[.3rem] border-slate-200 bg-blue-600;
+}
+.isDark.active span {
+  @apply relative h-[1rem] w-[1rem] rounded-full bg-violet-300/90 before:absolute before:left-1/2 before:top-1/2 before:h-[.5rem] before:w-[.5rem] before:translate-x-[-50%] before:translate-y-[-50%] before:rounded-full before:bg-blue-600;
+}

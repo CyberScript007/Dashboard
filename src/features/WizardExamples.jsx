@@ -22,7 +22,7 @@ function WizardExamples() {
     <>
       <DropDowMenu
         icon={<AiOutlineProfile size={23} />}
-        itemContent={"Wizard Examples"}
+        itemContent={"wizard examples"}
         lists={wizardLists}
       />
     </>

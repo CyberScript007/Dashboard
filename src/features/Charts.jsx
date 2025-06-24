@@ -16,7 +16,7 @@ function Charts() {
   return (
     <DropDowMenu
       icon={<LuActivitySquare size={23} />}
-      itemContent={"Charts"}
+      itemContent={"charts"}
       lists={chartsList}
     />
   );

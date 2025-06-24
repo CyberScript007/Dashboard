@@ -17,7 +17,7 @@ function DataTables() {
     <>
       <DropDowMenu
         icon={<LiaTableSolid size={23} />}
-        itemContent={"DataTables"}
+        itemContent={"datatables"}
         lists={dataTablesList}
       />
     </>

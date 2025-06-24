@@ -5,7 +5,8 @@ import Logo from "./Logo";
 import SidebarContent from "./SidebarContent";
 
 function Sidebar() {
-  const { toggle, openSidebar, closeSidebar, onHover } = useToggleContext();
+  const { toggle, openSidebar, closeSidebar, onHover, theme } =
+    useToggleContext();
 
   const sidebarAnimate = {
     open: {
@@ -18,7 +19,7 @@ function Sidebar() {
 
   return (
     <motion.aside
-      className={`${onHover ? "fixed inset-x-0 inset-y-0 z-[1000]" : "relative"} max-h-screen w-[16.5rem] bg-white max-[1200px]:hidden`}
+      className={`${onHover ? "fixed inset-x-0 inset-y-0 z-[2000]" : "relative"} h-[100vh] w-[16.5rem] ${theme === "light" ? "bg-white" : "dark:bg-slate-800"} transition max-[1200px]:hidden`}
       onMouseEnter={openSidebar}
       onMouseLeave={closeSidebar}
       variants={sidebarAnimate}

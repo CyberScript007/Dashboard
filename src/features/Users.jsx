@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import NestedDropDownMenu from "../Components/NestedDropDownMenu";
 import ListDropDown from "../Components/ListDropDown";
 import flattendChildren from "../utils/flattendChildren";
+import { useToggleContext } from "../context/ToggleSidebarContext";
 
 const usersList = [
   {
@@ -52,28 +53,27 @@ const variantObj = {
 };
 
 function Users() {
-  const [show, setShow] = useState(false);
+  const { showList, toggle, onHover } = useToggleContext();
   const { pathname } = useLocation();
 
   return (
     <>
       <ListDropDown
         icon={<BiUser size={23} />}
-        setShow={setShow}
-        show={show}
-        listName={"Users"}
+        listName={"users"}
         pathname={pathname}
         lists={lists}
       />
 
       <motion.ul
         variants={variantObj}
-        animate={show ? "showList" : "hideList"}
+        animate={showList === "users" ? "showList" : "hideList"}
         className="h-0 overflow-hidden"
       >
-        {usersList.map((user, index) => (
-          <NestedDropDownMenu item={user} key={index} />
-        ))}
+        {(!toggle || onHover) &&
+          usersList.map((user, index) => (
+            <NestedDropDownMenu item={user} key={index} />
+          ))}
       </motion.ul>
     </>
   );

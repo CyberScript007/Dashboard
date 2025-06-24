@@ -1,5 +1,5 @@
 function Documentation() {
-  return <div>dashbord documentation</div>;
+  return <div>documentation</div>;
 }
 
 export default Documentation;
